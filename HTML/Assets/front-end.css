@@ -11,6 +11,7 @@ body {
     min-height: 99%;
     position: absolute;
     padding-top: 40px;
+    overflow-x: hidden;
 }
 
 
@@ -102,4 +103,120 @@ a:focus {
 .ctat-multchoice-option {
     margin-left: 20px;
     display: block !important;
+}
+
+.group::after,
+.tabBlock-tabs::after {
+    clear: both;
+    content: "";
+    display: table;
+}
+
+*,
+ ::before,
+ ::after {
+    box-sizing: border-box;
+}
+
+ol,
+ul {
+    padding: 0;
+    margin-left: 1.25rem;
+}
+
+.unstyledList,
+.tabBlock-tabs {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.tabBlock {
+    margin: 0 0 2.5rem;
+}
+
+.tabBlock-tab {
+    background-color: none;
+    border-top: solid;
+    border-left: none;
+    border-right: none;
+    border-width: 2px;
+    color: #b5a8c5;
+    cursor: pointer;
+    display: inline-block;
+    font-weight: 900;
+    float: left;
+    padding-top: 1em;
+    padding-bottom: 0.2em;
+    position: relative;
+    -webkit-transition: 0.1s ease-in-out;
+    transition: 0.1s ease-in-out;
+}
+
+.tabBlock-tab:last-of-type {
+    border-right-style: none;
+}
+
+.tabBlock-tab::before,
+.tabBlock-tab::after {
+    content: "";
+    display: block;
+    height: 4px;
+    position: absolute;
+    -webkit-transition: 0.1s ease-in-out;
+    transition: 0.1s ease-in-out;
+}
+
+.tabBlock-tab::before {
+    background-color: #b5a8c5;
+    left: -2px;
+    right: -2px;
+    top: -2px;
+}
+
+.tabBlock-tab::after {
+    background-color: #f8f8f8;
+    bottom: -2px;
+    left: 0;
+    right: 0;
+}
+
+@media screen and (min-width: 700px) {
+    .tabBlock-tab {
+        padding-left: 2.5rem;
+        padding-right: 2.5rem;
+    }
+}
+
+.tabBlock-tab.is-active {
+    position: relative;
+    color: #975997;
+    background-color: #f8f8f8;
+    z-index: 1;
+}
+
+.tabBlock-tab.is-active::before {
+    background-color: #975997;
+}
+
+.tabBlock-tab.is-active::after {
+    background-color: #f8f8f8;
+}
+
+.tabBlock-content {
+    background-color: #f8f8f8;
+    padding: 1.25rem;
+}
+
+.tabBlock-pane {
+    padding: 25px;
+    color: #505050
+}
+
+.tabBlock-pane> :last-child {
+    margin-bottom: 0;
+}
+
+.silex-element-content {
+    z-index: -2;
 }
